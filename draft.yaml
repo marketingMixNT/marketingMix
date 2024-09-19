@@ -1,0 +1,20 @@
+models:
+  Post:
+    title: string unique
+    slug: string unique
+    meta_title: string nullable
+    meta_description: string nullable
+    content: text
+    thumbnail: text
+    featured: boolean
+    published_at: datetime
+    relationships:
+      belongsTo: User
+      belongsToMany: Category
+
+  Category:
+    title: string unique
+    slug: string
+    relationships:
+      belongsTo: User
+      belongsToMany: Post

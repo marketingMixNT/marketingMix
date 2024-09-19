@@ -1,0 +1,11 @@
+created:
+    - database/factories/PostFactory.php
+    - database/factories/CategoryFactory.php
+    - database/migrations/2024_09_19_110924_create_posts_table.php
+    - database/migrations/2024_09_19_110925_create_categories_table.php
+    - database/migrations/2024_09_19_110926_create_category_post_table.php
+    - app/Models/Post.php
+    - app/Models/Category.php
+models:
+    Post: { title: 'string unique', slug: 'string unique', meta_title: 'string nullable', meta_description: 'string nullable', content: text, thumbnail: text, featured: boolean, published_at: datetime, relationships: { belongsTo: User, belongsToMany: Category } }
+    Category: { title: 'string unique', slug: string, relationships: { belongsTo: User, belongsToMany: Post } }
